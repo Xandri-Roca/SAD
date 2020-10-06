@@ -22,7 +22,7 @@ public class EditableBufferedReader extends BufferedReader {
     public void unsetRaw(){
         try{
 
-        	String[] cmd = {"/bin/sh", "-c", "stty echo cooked </dev/tty"}
+            String[] cmd = {"/bin/sh", "-c", "stty echo cooked </dev/tty"}
             Process newProcess=Runtime.getRuntime().exec(cmd);
             newProcess.waitFor();
         } catch(Exception ex){
