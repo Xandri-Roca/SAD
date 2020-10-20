@@ -15,7 +15,8 @@ public class Line{
 		phrase = new char[maxSize];
 		cursorPosition = 0;
 		numLetters = 0;
-		//
+		//insertar = 0;
+		insertar = false;
 
 	}
 
