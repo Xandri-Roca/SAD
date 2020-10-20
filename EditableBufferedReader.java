@@ -78,24 +78,24 @@ public class EditableBufferedReader extends BufferedReader {
     		keyId = this.read();
 
     		switch(keyId){
-
+			
     			// ESC = "\u001b"  escape code
 				// "left" => "[1D"			 "right" => "[1C"		"up" => "[1A"		 			"down" => "[1B"
-				// "linestart" => "[9D"		 "topleft" => "[H"		"bottomright" => "[24;79H"		"delete" = > "[P"
+				// "linestart" => "[xD"		 "topleft" => "[H"		"bottomright" => "[24;79H"		"delete" = > "[P"
 
     			case KeyValues.RIGHT:
     				if(line.getCursorPosition()<line.getNumLetters()){
-                        System.out.print("\u001b[1C");
-                        line.moveRight();
-                    }
-                    break;
+                        		System.out.print("\u001b[1C");
+                        		line.moveRight();
+                    		}
+                    		break;
 
     			case KeyValues.LEFT:
-                    if(line.getCursorPosition()>0){
-                        System.out.print("\u001b[1D"); // 1 indicates number of moves it does
-                        line.moveLeft();
-                    }
-                    break;
+                    		if(line.getCursorPosition()>0){
+                      			System.out.print("\u001b[1D"); // 1 indicates number of moves it does
+                        		line.moveLeft();
+                    		}
+                    		break;
 
     			case KeyValues.INICIO:
 
@@ -117,18 +117,18 @@ public class EditableBufferedReader extends BufferedReader {
     				break;
 
     			case KeyValues.SUPRIMIR:
-                    if(line.getCursorPosition()<line.getNumLetters()){
-                        System.out.print("\u001b[P");
-                        line.suprimir();
-                    }
+                    		if(line.getCursorPosition()<line.getNumLetters()){
+                       			System.out.print("\u001b[P");  //erase the letter that was on the cursor's position
+                        		line.suprimir();
+                    		}
     				break;
 
     			case KeyValues.RETROCESO:
-                    if(line.getCursorPosition()>0){
-                        System.out.print("\u001b[1D"); //move to the left
-                        System.out.print("\u001b[P"); //erase character on cursor pos
-                        line.retroceso();
-                    }
+                    		if(line.getCursorPosition()>0){
+                        		System.out.print("\u001b[1D");
+                        		System.out.print("\u001b[P"); 
+                        		line.retroceso();
+                    		}
     				break;
 
     			case KeyValues. ENTER:
