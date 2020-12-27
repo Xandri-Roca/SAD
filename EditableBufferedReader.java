@@ -29,8 +29,7 @@ public class EditableBufferedReader extends BufferedReader {
     // switch the terminal console into cooked mode and activate echo.
     public void unsetRaw(){
         try{
-
-        	String[] cmd = {"/bin/sh", "-c", "stty echo cooked </dev/tty"};
+            String[] cmd = {"/bin/sh", "-c", "stty echo cooked </dev/tty"};
             Process newProcess=Runtime.getRuntime().exec(cmd);
             newProcess.waitFor();
         } catch(Exception ex){
@@ -85,20 +84,19 @@ public class EditableBufferedReader extends BufferedReader {
 
     			case KeyValues.RIGHT:
     				if(line.getCursorPosition() < line.getNumLetters()){
-                        System.out.print("\u001b[1C");
-                        line.moveRight();
-                    }
-                    break;
+                        		System.out.print("\u001b[1C");
+                       			line.moveRight();
+                   		}
+                    		break;
 
     			case KeyValues.LEFT:
-                    if(line.getCursorPosition() > 0){
-                        System.out.print("\u001b[1D");
-                        line.moveLeft();
-                    }
-                    break;
+				if(line.getCursorPosition() > 0){
+					System.out.print("\u001b[1D");
+					line.moveLeft();
+				}
+				break;
 
     			case KeyValues.INICIO:
-
     				System.out.print("\u001b[" + String.valueOf(line.getCursorPosition()) + "D");
     				line.moveToInicio();
     				break;
@@ -111,27 +109,27 @@ public class EditableBufferedReader extends BufferedReader {
     				break;
 
     			case KeyValues.INSERT:
-                    if(line.getInsertarState()){
-                        System.out.print("\u001b[4h");
-                    }else{
-                        System.out.print("\u001b[4l");
-                    }
-                    line.insertar();
-                    break;
+                    		if(line.getInsertarState()){
+                        		System.out.print("\u001b[4h");
+                    		}else{
+                        		System.out.print("\u001b[4l");
+                    		}
+                    		line.insertar();
+                    		break;
 
     			case KeyValues.SUPRIMIR:
-                    if(line.getCursorPosition() < line.getNumLetters()){
-                        System.out.print("\u001b[P");
-                        line.suprimir();
-                    }
+				if(line.getCursorPosition() < line.getNumLetters()){
+					System.out.print("\u001b[P");
+					line.suprimir();
+				}
     				break;
 
     			case KeyValues.RETROCESO:
-                    if(line.getCursorPosition() > 0){
-                        System.out.print("\u001b[1D"); //move one position to the left
-                        System.out.print("\u001b[P"); //erase the character located on cursor's position
-                        line.retroceso();
-                    }
+				if(line.getCursorPosition() > 0){
+					System.out.print("\u001b[1D"); //move one position to the left
+					System.out.print("\u001b[P"); //erase the character located on cursor's position
+					line.retroceso();
+				}
     				break;
 
     			case KeyValues. ENTER:
