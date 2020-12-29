@@ -24,44 +24,44 @@ public class Console implements Observer{
 				System.out.print("\u001b[1C");
 				break;
 
-    		case KeyValues.LEFT:
+    			case KeyValues.LEFT:
 				System.out.print("\u001b[1D");
 				break;
 
-    		case KeyValues.INICIO:
-    			System.out.print("\u001b[" + cursorUpdate + "D");
-    			//System.out.print(cursorUpdate);
-    			break;
+    			case KeyValues.INICIO:
+    				System.out.print("\u001b[" + cursorUpdate + "D");
+    				//System.out.print(cursorUpdate);
+    				break;
 
-    		case KeyValues.FIN:
-	    		System.out.print("\u001b[" + cursorUpdate + "C");
-    			break;
+    			case KeyValues.FIN:
+	    			System.out.print("\u001b[" + cursorUpdate + "C");
+    				break;
 
-    		case KeyValues.INSERT:
-                if(insert == 0){
-                    System.out.print("\u001b[4h");
-                }else{
-                    System.out.print("\u001b[4l");
-                }
-                break;
+			case KeyValues.INSERT:
+				if(insert == 0){
+			    		System.out.print("\u001b[4h");
+				}else{
+			    		System.out.print("\u001b[4l");
+				}
+				break;
 
-    		case KeyValues.SUPRIMIR:
+			case KeyValues.SUPRIMIR:
 				System.out.print("\u001b[P");
 				System.out.print("\u001b[1D");
-    			break;
+				break;
 
-    		case KeyValues.RETROCESO:
+			case KeyValues.RETROCESO:
 				System.out.print("\u001b[1D");
 				System.out.print("\u001b[P");
-    			break;
+				break;
 
-    		case KeyValues.ENTER:
-    			// out of the while
-    			break;
+			case KeyValues.ENTER:
+				// out of the while
+				break;
 
-    		default:
-    			System.out.print((char) keyId);
-    			break;
+			default:
+				System.out.print((char) keyId);
+				break;
 		}
 	}
 }
