@@ -41,8 +41,7 @@ public class EditableBufferedReader extends BufferedReader {
     // switch the terminal console into cooked mode and activate echo.
     public void unsetRaw(){
         try{
-
-        	String[] cmd = {"/bin/sh", "-c", "stty echo cooked </dev/tty"};
+	    String[] cmd = {"/bin/sh", "-c", "stty echo cooked </dev/tty"};
             Process newProcess=Runtime.getRuntime().exec(cmd);
             newProcess.waitFor();
         } catch(Exception ex){
@@ -85,32 +84,32 @@ public class EditableBufferedReader extends BufferedReader {
     		switch(keyId){
 
     			case KeyValues.RIGHT:
-                    line.moveRight();
-                    break;
+			    	line.moveRight();
+			    	break;
 
     			case KeyValues.LEFT:
-                    line.moveLeft();
-                    break;
+			    	line.moveLeft();
+			    	break;
 
     			case KeyValues.INICIO:
-    				line.moveToInicio();
-                    //System.out.print(KeyValues.INICIO);
-    				break;
+    			   	line.moveToInicio();
+                    	   	//System.out.print(KeyValues.INICIO);
+    			    	break;
 
     			case KeyValues.FIN:
 	    			line.moveToFin();
     				break;
 
     			case KeyValues.INSERT:
-                    line.insertar();
-                    break;
+                    		line.insertar();
+                    		break;
 
     			case KeyValues.SUPRIMIR:
-                    line.suprimir();
+                    		line.suprimir();
     				break;
 
     			case KeyValues.RETROCESO:
-                    line.retroceso();
+                    		line.retroceso();
     				break;
 
     			case KeyValues. ENTER:
