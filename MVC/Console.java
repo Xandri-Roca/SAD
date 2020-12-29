@@ -6,6 +6,7 @@ import java.util.Observer;
 
 public class Console implements Observer{
 	// represents the visualization of the data that model contains.
+	
 	private int a;
 
 	public Console(){
