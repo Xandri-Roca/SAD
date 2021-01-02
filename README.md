@@ -1,5 +1,5 @@
 # SAD_P1
-Practiques SAD
+Practiques SAD - Bernat Xandri Zaragoza i Ramon Roca Oliver
 
 
 Falta:
