@@ -1,13 +1,5 @@
-# SAD_P1
+# Pràctica 1
 Practiques SAD - Bernat Xandri Zaragoza i Ramon Roca Oliver
 
-
-Falta:
-
-    1. Implementar el model MVC
-    
-    2. Implementar edició de línies multilínea
-    
-    3. suport bàsic de ratolí
-    
-    4. calculadora bàsica (?)
+1) En la primer part d'aquesta prcatica hi ha una la implementacio del readline amb capacitats d’edició sense l'utilització del model MVC.
+2) En la segona part, podem trobar el mateix codi implementat seguint el patró Model/View/Controller.
